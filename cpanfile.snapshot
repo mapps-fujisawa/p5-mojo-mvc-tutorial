@@ -914,6 +914,36 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       File::Copy 0
       File::Spec 0
+  FormValidator-Lite-0.38
+    pathname: T/TO/TOKUHIROM/FormValidator-Lite-0.38.tar.gz
+    provides:
+      FormValidator::Lite 0.38
+      FormValidator::Lite::Constraint undef
+      FormValidator::Lite::Constraint::Date undef
+      FormValidator::Lite::Constraint::Default undef
+      FormValidator::Lite::Constraint::Email undef
+      FormValidator::Lite::Constraint::File undef
+      FormValidator::Lite::Constraint::Japanese undef
+      FormValidator::Lite::Constraint::Number undef
+      FormValidator::Lite::Constraint::Time undef
+      FormValidator::Lite::Constraint::URL undef
+      FormValidator::Lite::Hash undef
+      FormValidator::Lite::Messages::en undef
+      FormValidator::Lite::Messages::ja undef
+      FormValidator::Lite::Upload undef
+      FormValidator::Lite::Upload::CGI undef
+      FormValidator::Lite::Upload::HTTPEngine undef
+      FormValidator::Lite::Upload::PlackRequest undef
+    requirements:
+      CGI >= 3.31, != 4.05, != 4.06, != 4.07, != 4.08
+      Class::Accessor::Lite 0.05
+      Class::Load 0.11
+      Email::Valid 0
+      Email::Valid::Loose 0
+      Filter::Util::Call 0
+      Module::Build 0.38
+      Scalar::Util 1.19
+      perl 5.008001
   FormValidator-Simple-0.29
     pathname: L/LY/LYOKATO/FormValidator-Simple-0.29.tar.gz
     provides:

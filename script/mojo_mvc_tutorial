@@ -21,5 +21,4 @@ EOF
 $ENV{MOJO_APP} ||= 'MojoMvcTutorial';
 
 # Start commands
-#Mojolicious::Commands->start;
 Mojolicious::Commands->start_app('MojoMvcTutorial');

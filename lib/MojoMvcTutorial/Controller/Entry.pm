@@ -5,7 +5,10 @@ use warnings;
 
 use base 'Mojolicious::Controller';
 
-use FormValidator::Simple;
+use FormValidator::Lite;
+
+use Mojo::Log;
+my $log = Mojo::Log->new();
 
 # This action will render a template
 sub list {
@@ -24,16 +27,14 @@ sub new_entry {
 
 sub post {
     my $c = shift;
-
     $c->redirect_to('/entry/list') unless $c->req->method eq 'POST';
 
     # validate
-    my $result = FormValidator::Simple->check($c => [
-        title => ['NOT_BLANK', ['LENGTH', 1, 50]],
-        body  => ['NOT_BLANK', ['LENGTH', 1, 65535]],
-    ]);
-
-    if ($result->has_error) {
+    my $validator = FormValidator::Lite->new($c->req);
+    my $result = $validator -> check (
+        title => [qw/NOT_NULL/],
+    );
+    if ($validator->has_error) {
         return $c->render(
             template => 'entry/new_entry',
             result   => $result,
